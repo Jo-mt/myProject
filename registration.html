@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ลงทะเบียนอบรม — AI EMPOWER</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* ======= Galaxy Aurora Theme ======= */
+    :root{
+      --space:#05060b;
+      --space2:#0b1230;
+      --violet:#8b5cf6;
+      --indigo:#4f46e5;
+      --cyan:#22d3ee;
+      --ink:#e8f2ff;
+      --muted:#98a4c7;
+      --glass:rgba(255,255,255,.08);
+      --line:rgba(255,255,255,.15);
+    }
+
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:"TH Sarabun New",system-ui,Segoe UI;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(139,92,246,.28), transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, rgba(34,211,238,.22), transparent 60%),
+        radial-gradient(800px 500px at 50% 120%, rgba(79,70,229,.22), transparent 60%),
+        linear-gradient(180deg,var(--space) 0%,var(--space2) 100%);
+      min-height:100vh;
+      overflow-x:hidden;
+      position:relative;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image:
+        radial-gradient(1px 1px at 20% 30%, white 40%, transparent),
+        radial-gradient(1px 1px at 70% 60%, white 40%, transparent),
+        radial-gradient(1px 1px at 50% 80%, white 40%, transparent),
+        radial-gradient(1px 1px at 10% 50%, white 40%, transparent);
+      opacity:.5;
+      animation:twinkle 8s linear infinite;
+      z-index:-1;
+    }
+    @keyframes twinkle{0%,100%{opacity:.3}50%{opacity:.9}}
+
+    header{
+      text-align:center;
+      padding:40px 16px 10px;
+    }
+    header h1{
+      margin:0;
+      font-size:clamp(28px,5vw,52px);
+      background:linear-gradient(90deg,var(--violet),var(--indigo),var(--cyan));
+      -webkit-background-clip:text;
+      color:transparent;
+      text-shadow:0 0 18px rgba(139,92,246,.45),0 0 28px rgba(34,211,238,.35);
+    }
+
+    nav{
+      text-align:center;
+      background:var(--glass);
+      padding:12px;
+      backdrop-filter:blur(8px);
+      box-shadow:0 0 14px rgba(0,0,0,.5);
+    }
+    nav a{
+      color:#fff;
+      margin:0 10px;
+      text-decoration:none;
+      font-weight:bold;
+      padding:8px 12px;
+      border-radius:8px;
+      transition:.2s;
+    }
+    nav a:hover{
+      background:linear-gradient(90deg,rgba(139,92,246,.22),rgba(34,211,238,.22));
+      box-shadow:0 0 10px rgba(34,211,238,.45);
+    }
+
+    form{
+      width:90%;
+      max-width:480px;
+      margin:50px auto;
+      background:var(--glass);
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow:0 10px 28px rgba(0,0,0,.35);
+      backdrop-filter:blur(12px);
+      padding:30px;
+      color:var(--ink);
+    }
+
+    label{
+      display:block;
+      margin-top:12px;
+      font-weight:bold;
+      text-shadow:0 0 8px rgba(34,211,238,.6);
+    }
+
+    input,select,textarea{
+      width:100%;
+      padding:10px 12px;
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:10px;
+      background:rgba(255,255,255,.1);
+      color:var(--ink);
+      margin-top:5px;
+      font-size:1.05rem;
+      transition:border .3s, box-shadow .3s;
+    }
+
+    input:focus,select:focus,textarea:focus{
+      outline:none;
+      border-color:rgba(139,92,246,.8);
+      box-shadow:0 0 6px rgba(139,92,246,.6);
+    }
+
+    button{
+      margin-top:20px;
+      width:100%;
+      padding:12px;
+      font-size:1.3rem;
+      font-weight:bold;
+      color:#0a0f1f;
+      background:linear-gradient(135deg,var(--violet),var(--cyan));
+      border:none;
+      border-radius:12px;
+      cursor:pointer;
+      transition:transform .2s,box-shadow .3s;
+      box-shadow:0 0 18px rgba(139,92,246,.45);
+    }
+    button:hover{
+      transform:translateY(-1px);
+      box-shadow:0 0 30px rgba(34,211,238,.55);
+    }
+
+    footer{
+      text-align:center;
+      color:var(--muted);
+      padding:20px;
+      margin-top:40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ลงทะเบียนอบรม AI EMPOWER</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">หน้าหลัก</a> |
+    <a href="schedule.html">กำหนดการ</a> |
+    <a href="registration.html" class="active">ลงทะเบียน</a> |
+    <a href="payment.html">แจ้งชำระเงิน</a> |
+    <a href="contact.html">ติดต่อ</a>
+  </nav>
+
+  <form>
+    <label>ชื่อ-นามสกุล*</label>
+    <input type="text" placeholder="เช่น สมชาย ใจดี" required>
+
+    <label>อีเมล*</label>
+    <input type="email" placeholder="som@email.com" required>
+
+    <label>เบอร์โทรศัพท์*</label>
+    <input type="tel" placeholder="0812345678" required>
+
+    <label>สถานะ/สังกัด*</label>
+    <select required>
+      <option value="">— เลือกสถานะ —</option>
+      <option>ครู/อาจารย์</option>
+      <option>บุคลากรทางการศึกษา</option>
+      <option>นักศึกษา</option>
+    </select>
+
+    <label>ความคาดหวังจากการอบรม</label>
+    <textarea rows="4" placeholder="เขียนสิ่งที่คุณคาดหวัง..."></textarea>
+
+    <button type="submit">ลงทะเบียน</button>
+  </form>
+
+  <footer>© 2568 สำนักวิทยบริการและเทคโนโลยีสารสนเทศ มหาวิทยาลัยราชภัฏจันทรเกษม</footer>
+</body>
+</html>
